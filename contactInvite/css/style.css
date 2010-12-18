@@ -1,0 +1,40 @@
+body{
+	width:575px;
+	height:570px;
+	font-size:11px;
+}
+
+h1{
+	font-size:16px;
+	margin:0;
+}
+
+h2{
+	font-size:13px;
+}
+
+.select,.unselect{
+	font-size:11px;
+}
+
+#checkbox_container{
+	height:390px;
+	overflow:auto;
+}
+
+.contact_container{
+	width:50%;
+	float:left;
+	font-size:11px;
+}
+
+textarea{
+	width:100%;
+	border:1px solid black;
+	height:80px;
+	margin-bottom:6px;
+}
+
+.submit{
+	float:right;
+}
