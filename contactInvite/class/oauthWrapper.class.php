@@ -17,11 +17,9 @@ abstract class oauthWrapper {
 		
 		$this->checkRequirements();
 		
-		$provider = $_REQUEST['provider'];
-		
 		global $domain,$contactinvite_folder;
 	
-		$this->callback_url = $domain."/".$contactinvite_folder."/handle.php?provider=".$provider;
+		$this->callback_url = $domain."/".$contactinvite_folder."/handle.php?provider=".$this->provider;
 		
 		$this->classname = get_class($this);
 		
@@ -58,6 +56,10 @@ abstract class oauthWrapper {
 		
 		if(is_null($this->consumer_key)||is_null($this->consumer_secret)){
 			throw new Exception("Please specify both the consumer_key and the secret key in you class definition");
+		}
+		
+		if(is_null($this->provider)){
+			throw new Exception("Please specify a provider in your class");
 		}
 		
 		if(is_null($this->request_token_url)){

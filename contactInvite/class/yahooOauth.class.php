@@ -12,6 +12,7 @@
 		
 		protected $request_token_url = "https://api.login.yahoo.com/oauth/v2/get_request_token";
 		protected $access_token_url = "https://api.login.yahoo.com/oauth/v2/get_token";
+		protected $provider = "yahoo";
 		protected $auth_type = OAUTH_AUTH_TYPE_URI;
 		
 		public function __construct(){

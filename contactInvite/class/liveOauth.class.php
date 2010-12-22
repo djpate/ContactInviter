@@ -8,6 +8,7 @@
 		
 		protected $request_token_url = "n/a";
 		protected $access_token_url = "https://consent.live.com/AccessToken.aspx";
+		protected $provider = "live";
 		
 		public function __construct(){
 			global $live_consumer_key,$live_consumer_secret;

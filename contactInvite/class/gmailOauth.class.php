@@ -11,6 +11,7 @@
 		
 		protected $request_token_url = "https://www.google.com/accounts/OAuthGetRequestToken?scope=https://www.google.com/m8/feeds/";
 		protected $access_token_url = "https://www.google.com/accounts/OAuthGetAccessToken";
+		protected $provider = "gmail";
 		
 		public function __construct(){
 			global $gmail_consumer_key,$gmail_consumer_secret;
