@@ -15,14 +15,14 @@ abstract class oauthWrapper {
 	
 	public function __construct(){
 		
-		$this->checkRequirements();
-		
 		global $domain,$contactinvite_folder;
 	
 		$this->callback_url = $domain."/".$contactinvite_folder."/handle.php?provider=".$this->provider;
 		
 		$this->classname = get_class($this);
-		
+
+		$this->checkRequirements();
+
 		$this->oauth = new Oauth($this->consumer_key,$this->consumer_secret,$this->sig_method,$this->auth_type);
 		
 	}
