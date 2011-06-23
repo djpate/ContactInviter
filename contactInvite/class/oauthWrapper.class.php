@@ -81,18 +81,30 @@ abstract class oauthWrapper {
 		try {
 			
 			$this->oauth->setToken($token,$_SESSION['oauth'][$this->classname]['request']['oauth_token_secret']);
-		
+			
 			$access_token_info = $this->oauth->getAccessToken($this->access_token_url);
 		
-			foreach($access_token_info as $id => $val){
-				$_SESSION['oauth'][$this->classname]['access'][$id] = $val;
+			if(!empty($access_token_info)){
+				foreach($access_token_info as $id => $val){
+					$_SESSION['oauth'][$this->classname]['access'][$id] = $val;
+				}
+			} else {
+				die("Failed fetching access token, response was: " . $this->oauth->getLastResponse());
 			}
+			
+			
 			
 			return true;
 		
 		} catch (OAuthException $E){
-			return false;
+			print_r($_SESSION);
+			print_r($E->debugInfo);
+			print_r($E->lastResponse);
+			print_r($this->oauth->getLastResponseInfo());
+			die();
 		}
+		
+		return false;
 		
 	}
 		

@@ -30,7 +30,7 @@
 			$return_array = array();
 			
 			$this->oauth->setToken($_SESSION['oauth']['gmailOauth']['access']['oauth_token'],$_SESSION['oauth']['gmailOauth']['access']['oauth_token_secret']);
-	        $this->oauth->fetch("https://www.google.com/m8/feeds/contacts/default/full?max-results=100000&alt=json"); // 100 000 should be enough :p
+	        $this->oauth->fetch("https://www.google.com/m8/feeds/contacts/default/full?max-results=100000&alt=json",null,OAUTH_HTTP_METHOD_GET); // 100 000 should be enough :p
 	        
 	        $array = json_decode($this->oauth->getLastResponse(),true);
 	        

@@ -64,7 +64,8 @@
 			$inviteForm = new inviteForm($oauth_obj->getContacts());
 			echo $inviteForm->display();
 		} else {
-			header("location:".$oauth_obj->getLoginUrl());
+			//header("location:".$oauth_obj->getLoginUrl());
+			echo "something went wrong";
 		}
 	}
 
